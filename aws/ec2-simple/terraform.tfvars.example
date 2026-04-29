@@ -1,0 +1,34 @@
+# AWS Configuration
+aws_region = "us-east-1"
+project_name = "goondvr"
+
+# EC2 Instance Configuration
+instance_type = "m7i-flex.large"  # Free tier eligible: 2 vCPU, 8 GB RAM
+volume_size = 30  # GB
+
+# Network Security
+# Restrict to your IP for better security
+allowed_cidr_blocks = ["YOUR_IP/32"]  # Example: ["103.185.218.95/32"]
+
+# SSH Key (Generate with: ssh-keygen -t rsa -b 4096 -f goondvr-key)
+ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQD... your-public-key-here"
+
+# GoFile Configuration
+gofile_api_token = "AjiBq8d9UPWFSSaBe1YKfomxBjTJXT1i"
+
+# Supabase Configuration
+supabase_url = "https://iktbuxgnnuebuoqaywev.supabase.co"
+supabase_api_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+
+# Discord Notifications (Optional)
+discord_webhook_url = "https://discord.com/api/webhooks/..."
+
+# Chaturbate Cookies
+chaturbate_cookies = "your-cookies-here"
+
+# User Agent
+user_agent = "Mozilla/5.0 (iPhone; CPU iPhone OS 18_1_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Brave/1 Mobile/15E148 Safari/E7FBAF"
+
+# Web UI Authentication
+admin_username = "admin"
+admin_password = "Basudevkr@123"
