@@ -1,0 +1,35 @@
+[
+  {
+    "is_paused": false,
+    "username": "jasonsweets",
+    "site": "chaturbate",
+    "framerate": 0,
+    "resolution": 0,
+    "pattern": "videos/{{if ne .Site \"chaturbate\"}}{{.Site}}/{{end}}{{.Username}}_{{.Year}}-{{.Month}}-{{.Day}}_{{.Hour}}-{{.Minute}}-{{.Second}}{{if .Sequence}}_{{.Sequence}}{{end}}",
+    "max_duration": 0,
+    "max_filesize": 0,
+    "created_at": 1777445213
+  },
+  {
+    "is_paused": false,
+    "username": "aya__hitakayama",
+    "site": "chaturbate",
+    "framerate": 0,
+    "resolution": 0,
+    "pattern": "videos/{{if ne .Site \"chaturbate\"}}{{.Site}}/{{end}}{{.Username}}_{{.Year}}-{{.Month}}-{{.Day}}_{{.Hour}}-{{.Minute}}-{{.Second}}{{if .Sequence}}_{{.Sequence}}{{end}}",
+    "max_duration": 0,
+    "max_filesize": 0,
+    "created_at": 1777445213
+  },
+  {
+    "is_paused": false,
+    "username": "danyandannarearden",
+    "site": "chaturbate",
+    "framerate": 0,
+    "resolution": 0,
+    "pattern": "videos/{{if ne .Site \"chaturbate\"}}{{.Site}}/{{end}}{{.Username}}_{{.Year}}-{{.Month}}-{{.Day}}_{{.Hour}}-{{.Minute}}-{{.Second}}{{if .Sequence}}_{{.Sequence}}{{end}}",
+    "max_duration": 0,
+    "max_filesize": 0,
+    "created_at": 1777445213
+  }
+]

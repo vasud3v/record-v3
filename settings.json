@@ -1,0 +1,15 @@
+{
+  "recording_finalization_mode": "remux",
+  "recording_finalization_container": "mp4",
+  "recording_finalization_encoder": "libx264",
+  "recording_finalization_quality": "18",
+  "recording_finalization_preset": "slow",
+  "gofile_enabled": true,
+  "gofile_api_token": "AjiBq8d9UPWFSSaBe1YKfomxBjTJXT1i",
+  "gofile_folder_id": "",
+  "gofile_delete_after_upload": true,
+  "supabase_enabled": true,
+  "supabase_url": "https://iktbuxgnnuebuoqaywev.supabase.co",
+  "supabase_api_key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlrdGJ1eGdubnVlYnVvcWF5d2V2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY3NTcwMjcsImV4cCI6MjA5MjMzMzAyN30.Tl5VJdAnUSVzcbMd4k5IMqQltcJjvVUMR5fHoNO-BVw",
+  "supabase_table_name": "recordings"
+}
