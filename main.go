@@ -44,21 +44,23 @@ func main() {
 				Name:  "admin-username",
 				Usage: "Username for web authentication (optional)",
 				Value: "",
+				EnvVars: []string{"ADMIN_USERNAME"},
 			},
 			&cli.StringFlag{
 				Name:  "admin-password",
 				Usage: "Password for web authentication (optional)",
 				Value: "",
+				EnvVars: []string{"ADMIN_PASSWORD"},
 			},
 			&cli.IntFlag{
 				Name:  "framerate",
-				Usage: "Desired framerate (FPS)",
-				Value: 60, // Changed to 60 for highest quality
+				Usage: "Desired framerate (FPS). Use 0 for auto (highest available)",
+				Value: 0, // Auto-detect highest framerate
 			},
 			&cli.IntFlag{
 				Name:  "resolution",
-				Usage: "Desired resolution (e.g., 1080 for 1080p)",
-				Value: 1080, // Keep 1080p as default (highest commonly available)
+				Usage: "Desired resolution (e.g., 1080 for 1080p, 2160 for 4K). Use 0 for auto (highest available)",
+				Value: 0, // Auto-detect highest resolution
 			},
 			&cli.StringFlag{
 				Name:  "pattern",
@@ -97,11 +99,13 @@ func main() {
 				Name:  "cookies",
 				Usage: "Cookies to use in the request (format: key=value; key2=value2)",
 				Value: "",
+				EnvVars: []string{"CHATURBATE_COOKIES"},
 			},
 			&cli.StringFlag{
 				Name:  "user-agent",
 				Usage: "Custom User-Agent for the request",
 				Value: "",
+				EnvVars: []string{"USER_AGENT"},
 			},
 			&cli.StringFlag{
 				Name:  "domain",
@@ -116,7 +120,7 @@ func main() {
 			&cli.StringFlag{
 				Name:  "finalize-mode",
 				Usage: "Post-process closed recordings: none, remux, or transcode",
-				Value: "none",
+				Value: "remux", // Changed to remux by default
 			},
 			&cli.StringFlag{
 				Name:  "ffmpeg-encoder",
@@ -131,12 +135,12 @@ func main() {
 			&cli.IntFlag{
 				Name:  "ffmpeg-quality",
 				Usage: "FFmpeg quality value (CRF for software encoders, CQ for many hardware encoders)",
-				Value: 23,
+				Value: 18, // Changed to 18 for near-perfect quality
 			},
 			&cli.StringFlag{
 				Name:  "ffmpeg-preset",
 				Usage: "FFmpeg preset for transcode mode",
-				Value: "medium",
+				Value: "slow", // Changed to slow for better compression
 			},
 			&cli.BoolFlag{
 				Name:  "debug",
@@ -151,7 +155,7 @@ func main() {
 			&cli.BoolFlag{
 				Name:   "gofile-enabled",
 				Usage:  "Enable automatic upload to GoFile",
-				Value:  false,
+				Value:  true, // Changed to true by default
 				EnvVars: []string{"GOFILE_ENABLED"},
 			},
 			&cli.StringFlag{
@@ -175,7 +179,7 @@ func main() {
 			&cli.BoolFlag{
 				Name:   "supabase-enabled",
 				Usage:  "Enable storing recording metadata in Supabase",
-				Value:  false,
+				Value:  true, // Changed to true by default
 				EnvVars: []string{"SUPABASE_ENABLED"},
 			},
 			&cli.StringFlag{
