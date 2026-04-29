@@ -316,6 +316,9 @@ func PickPlaylist(masterPlaylist *m3u8.MasterPlaylist, baseURL string, resolutio
 	}
 
 	// If resolution is 0, automatically pick the highest available resolution
+	var variant *VideoResolution
+	var exists bool
+	
 	if resolution == 0 {
 		variant = lo.MaxBy(lo.Values(resolutions), func(a, b *VideoResolution) bool {
 			return a.Width > b.Width
@@ -338,6 +341,7 @@ func PickPlaylist(masterPlaylist *m3u8.MasterPlaylist, baseURL string, resolutio
 	var (
 		finalResolution = variant.Width
 		finalFramerate  = framerate
+		playlistURL     string
 	)
 	
 	// If framerate is 0, automatically pick the highest available framerate
