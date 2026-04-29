@@ -1,0 +1,35 @@
+[
+  {
+    "is_paused": false,
+    "username": "channel1",
+    "site": "chaturbate",
+    "framerate": 60,
+    "resolution": 1080,
+    "pattern": "videos/{{if ne .Site \"chaturbate\"}}{{.Site}}/{{end}}{{.Username}}_{{.Year}}-{{.Month}}-{{.Day}}_{{.Hour}}-{{.Minute}}-{{.Second}}{{if .Sequence}}_{{.Sequence}}{{end}}",
+    "max_duration": 0,
+    "max_filesize": 0,
+    "created_at": 0
+  },
+  {
+    "is_paused": false,
+    "username": "channel2",
+    "site": "chaturbate",
+    "framerate": 60,
+    "resolution": 1080,
+    "pattern": "videos/{{if ne .Site \"chaturbate\"}}{{.Site}}/{{end}}{{.Username}}_{{.Year}}-{{.Month}}-{{.Day}}_{{.Hour}}-{{.Minute}}-{{.Second}}{{if .Sequence}}_{{.Sequence}}{{end}}",
+    "max_duration": 0,
+    "max_filesize": 0,
+    "created_at": 0
+  },
+  {
+    "is_paused": false,
+    "username": "channel3",
+    "site": "stripchat",
+    "framerate": 60,
+    "resolution": 1080,
+    "pattern": "videos/{{if ne .Site \"chaturbate\"}}{{.Site}}/{{end}}{{.Username}}_{{.Year}}-{{.Month}}-{{.Day}}_{{.Hour}}-{{.Minute}}-{{.Second}}{{if .Sequence}}_{{.Sequence}}{{end}}",
+    "max_duration": 0,
+    "max_filesize": 0,
+    "created_at": 0
+  }
+]

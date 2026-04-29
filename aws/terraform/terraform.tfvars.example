@@ -1,0 +1,28 @@
+# AWS Configuration
+aws_region = "us-east-1"
+project_name = "goondvr"
+
+# ECS Task Configuration
+docker_image = "ghcr.io/heapofchaos/goondvr:latest"
+task_cpu = "2048"  # 2 vCPU
+task_memory = "4096"  # 4 GB RAM
+
+# Network Security
+# Restrict access to specific IPs for better security
+# allowed_cidr_blocks = ["YOUR_IP_ADDRESS/32"]
+allowed_cidr_blocks = ["0.0.0.0/0"]
+
+# GoFile Configuration
+gofile_api_token = "YOUR_GOFILE_API_TOKEN_HERE"
+gofile_folder_id = ""  # Optional: specific folder ID
+gofile_delete_after_upload = true  # Delete local files after upload
+
+# Supabase Configuration
+supabase_enabled = true
+supabase_url = "https://your-project.supabase.co"
+supabase_api_key = "YOUR_SUPABASE_ANON_KEY"
+supabase_table_name = "recordings"
+
+# Web UI Authentication
+admin_username = "admin"
+admin_password = "CHANGE_THIS_PASSWORD"
