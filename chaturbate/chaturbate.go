@@ -315,14 +315,21 @@ func PickPlaylist(masterPlaylist *m3u8.MasterPlaylist, baseURL string, resolutio
 		resolutions[width].Framerate[framerateVal] = v.URI
 	}
 
-	variant, exists := resolutions[resolution]
-	if !exists {
-		candidates := lo.Filter(lo.Values(resolutions), func(r *VideoResolution, _ int) bool {
-			return r.Width < resolution
-		})
-		variant = lo.MaxBy(candidates, func(a, b *VideoResolution) bool {
+	// If resolution is 0, automatically pick the highest available resolution
+	if resolution == 0 {
+		variant = lo.MaxBy(lo.Values(resolutions), func(a, b *VideoResolution) bool {
 			return a.Width > b.Width
 		})
+	} else {
+		variant, exists = resolutions[resolution]
+		if !exists {
+			candidates := lo.Filter(lo.Values(resolutions), func(r *VideoResolution, _ int) bool {
+				return r.Width < resolution
+			})
+			variant = lo.MaxBy(candidates, func(a, b *VideoResolution) bool {
+				return a.Width > b.Width
+			})
+		}
 	}
 	if variant == nil {
 		return nil, fmt.Errorf("resolution not found")
@@ -332,12 +339,25 @@ func PickPlaylist(masterPlaylist *m3u8.MasterPlaylist, baseURL string, resolutio
 		finalResolution = variant.Width
 		finalFramerate  = framerate
 	)
-	playlistURL, exists := variant.Framerate[framerate]
-	if !exists {
-		for fr, u := range variant.Framerate {
-			playlistURL = u
-			finalFramerate = fr
-			break
+	
+	// If framerate is 0, automatically pick the highest available framerate
+	if framerate == 0 {
+		maxFramerate := 0
+		for fr := range variant.Framerate {
+			if fr > maxFramerate {
+				maxFramerate = fr
+			}
+		}
+		finalFramerate = maxFramerate
+		playlistURL = variant.Framerate[maxFramerate]
+	} else {
+		playlistURL, exists = variant.Framerate[framerate]
+		if !exists {
+			for fr, u := range variant.Framerate {
+				playlistURL = u
+				finalFramerate = fr
+				break
+			}
 		}
 	}
 
